@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Cost Calculator | WanderLux Travel Agency</title>
+  <meta name="description" content="Estimate your holiday cost with the WanderLux Trip Cost Calculator. Choose destination, travellers, days and travel style for an instant estimate.">
+  <meta name="keywords" content="travel agency, holiday packages, guided tours, honeymoon, trip cost calculator, WanderLux">
+  <meta name="author" content="WanderLux Travel Agency">
+  <meta property="og:title" content="Trip Cost Calculator | WanderLux Travel Agency">
+  <meta property="og:description" content="Estimate your holiday cost with the WanderLux Trip Cost Calculator. Choose destination, travellers, days and travel style for an instant estimate.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b4a5a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+    <a class="logo" href="index.html" aria-label="WanderLux home">Wander<span>Lux</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+    <ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="destinations.html">Destinations</a></li><li><a href="calculator.html" aria-current="page">Trip Calculator</a></li><li><a href="appointment.html">Appointment</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </nav>
+</header>
+<main id="main">
+<section class="page-banner">
+  <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=75" alt="" role="presentation">
+  <div class="container"><h1>Trip Cost Calculator</h1><p>Plan your budget in seconds. Choose your trip details and get an instant estimate.</p></div>
+</section>
+
+<section class="section"><div class="container calc-layout">
+  <div class="form-card reveal from-left">
+    <h2>Your trip details</h2>
+    <form id="calc-form" novalidate>
+      <div class="field"><label for="destination">Destination <span class="req" aria-hidden="true">*</span></label>
+        <select id="destination" name="destination" required data-label="Destination"><option value="">Select a destination</option></select>
+        <p class="error-msg" role="alert"></p></div>
+      <div class="field"><label for="travellers">Number of travellers <span class="req" aria-hidden="true">*</span></label>
+        <input type="number" id="travellers" name="travellers" min="1" max="20" value="2" required data-label="Number of travellers" inputmode="numeric">
+        <p class="hint">Rooms are twin-share (2 travellers per room).</p><p class="error-msg" role="alert"></p></div>
+      <div class="field"><label for="days">Number of days: <output id="days-out" for="days">5</output></label>
+        <div class="range-row"><span aria-hidden="true">1</span><input type="range" id="days" name="days" min="1" max="30" value="5"><span aria-hidden="true">30</span></div></div>
+      <fieldset class="field" style="border:0;padding:0;margin:0 0 1.2rem">
+        <legend style="font-weight:600;color:var(--teal-900);margin-bottom:.35rem">Travel style</legend>
+        <div class="style-options">
+          <div class="style-option"><input type="radio" id="s-budget" name="style" value="Budget"><label for="s-budget">Budget<small>Smart savings</small></label></div>
+          <div class="style-option"><input type="radio" id="s-standard" name="style" value="Standard" checked><label for="s-standard">Standard<small>Best value</small></label></div>
+          <div class="style-option"><input type="radio" id="s-luxury" name="style" value="Luxury"><label for="s-luxury">Luxury<small>Premium comfort</small></label></div>
+        </div></fieldset>
+      <button class="btn" type="submit">Calculate Estimate</button>
+      <button class="btn btn--teal" type="reset" style="margin-left:.4rem">Reset</button>
+    </form>
+  </div>
+  <aside class="result-panel reveal from-right" aria-label="Estimate result">
+    <div class="dest-preview" id="dest-preview" hidden><img src="" alt=""></div>
+    <div class="result-box" id="result"><div class="result-placeholder"><p>Choose your destination, group size, trip length and style, then press <strong>Calculate</strong> to see your estimate.</p></div></div>
+  </aside>
+</div></section>
+
+<section class="section section--sand"><div class="container">
+  <div class="section-head reveal"><h2>How is the estimate calculated?</h2></div>
+  <div class="grid grid--3">
+    <div class="card service reveal"><div class="icon" aria-hidden="true">🍽️</div><h3>Daily costs</h3><p>Meals, local transport and activities per traveller, per day.</p></div>
+    <div class="card service reveal delay-1"><div class="icon" aria-hidden="true">🏨</div><h3>Accommodation</h3><p>Hotel rate per room per night, shared by two travellers.</p></div>
+    <div class="card service reveal delay-2"><div class="icon" aria-hidden="true">✨</div><h3>Style multiplier</h3><p>Budget &times;0.75, Standard &times;1, Luxury &times;1.9.</p></div>
+  </div>
+</div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>WanderLux</h3>
+        <p>Personalised holidays, guided tours and tailor-made packages for domestic and international destinations.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations &amp; Services</a></li>
+          <li><a href="calculator.html">Trip Cost Calculator</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Plan</h3>
+        <ul>
+          <li><a href="appointment.html">Book an Appointment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Get in touch</h3>
+        <address style="font-style:normal">
+          12 Harbour Street, Melbourne VIC 3000<br>
+          <a href="tel:+61390001234">+61 3 9000 1234</a><br>
+          <a href="mailto:hello@wanderlux.example">hello@wanderlux.example</a>
+        </address>
+      </div>
+    </div>
+    <p class="copyright">&copy; <span id="year">2026</span> WanderLux Travel Agency. Student project for ICT502 &ndash; fictional business.</p>
+  </div>
+</footer>
+<button class="to-top" aria-label="Back to top">&uarr;</button>
+</body>
+</html>
